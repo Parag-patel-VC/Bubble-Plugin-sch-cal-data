@@ -2,7 +2,7 @@
     "categories": {
         "0": "data (things)"
     },
-    "description": "testing plug-in to filter data in calendar for Schedule me app",
+    "description": "test plug-in to filter data in calendar for Schedule me app.\nnot intended for general use",
     "image": "//meta-q.cdn.bubble.io/f1714212466120x375351632542519700/SchdulMe_FAV.svg",
     "license": "open_source",
     "name": "sch cal data"

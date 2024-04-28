@@ -12,6 +12,8 @@ function objectMapper(item){
     }
     debugger;
     let list_length = properties.idata.length();
+    var tmpjunk=properties.returndatatype;
+    console.log(properties.returndatatype);
     var result_array=[];
     if(properties.idata!=null){
         var OraData=properties.idata.get(0,properties.idata.length());
@@ -53,7 +55,7 @@ function objectMapper(item){
                 if(repeat==="never"){
                     if(EventDay===curDay && EventMonth===curMonth && EventYear===curYear){
                        
-                    	partial_result.push(objectMapper({"unique_id": unique_id,"Title": title,"StartDate": startDate,"EndDate": endDate,"EventRepeat": repeat,"EventTime": "8:15 PM","EventType": eventType,"FilterDate":curDate,"AdjustedStartDate":AdjustedStartDate,"AdjustedEndDate":AdjustedEndDate,"RoundoffDate":curDate,"EventColor":eventColor}));
+                    	partial_result.push(objectMapper({"uniqid": unique_id,"title": title,"startdate": startDate,"enddate": endDate,"eventrepeat": repeat,"eventtime": "8:15 PM","eventtype": eventType,"filterdate":curDate,"adjustedstartdate":AdjustedStartDate,"adjustedenddate":AdjustedEndDate,"roundoffdate":curDate,"eventcolor":eventColor}));
                     }
                 }else{
                     let CurEndTime=new Date(curDate);
@@ -61,7 +63,7 @@ function objectMapper(item){
                     let CompareDate=new Date(EventYear, EventMonth-1,EventDay,EventHour,EventMinute);                	
                     if(repeat==="daily"){
                         if(CompareDate<=CurEndTime){
-                            partial_result.push(objectMapper({"unique_id": unique_id,"Title": title,"StartDate": startDate,"EndDate": endDate,"EventRepeat": repeat,"EventTime": "8:15 PM","EventType": eventType,"FilterDate":curDate,"AdjustedStartDate":AdjustedStartDate,"AdjustedEndDate":AdjustedEndDate,"RoundoffDate":curDate,"EventColor":eventColor}));
+                            partial_result.push(objectMapper({"uniqid": unique_id,"title": title,"startdate": startDate,"enddate": endDate,"eventrepeat": repeat,"eventtime": "8:15 PM","eventtype": eventType,"filterdate":curDate,"adjustedstartdate":AdjustedStartDate,"adjustedenddate":AdjustedEndDate,"roundoffdate":curDate,"eventcolor":eventColor}));
                         }
 
                     }else if(repeat==="weekly"){
@@ -71,11 +73,11 @@ function objectMapper(item){
                         }
 
                         if(CompareDate<=CurEndTime && curWeekday===EventWeekday){
-                            partial_result.push(objectMapper({"unique_id": unique_id,"Title": title,"StartDate": startDate,"EndDate": endDate,"EventRepeat": repeat,"EventTime": "8:15 PM","EventType": eventType,"FilterDate":curDate,"AdjustedStartDate":AdjustedStartDate,"AdjustedEndDate":AdjustedEndDate,"RoundoffDate":curDate,"EventColor":eventColor}));
+                            partial_result.push(objectMapper({"uniqid": unique_id,"title": title,"startdate": startDate,"enddate": endDate,"eventrepeat": repeat,"eventtime": "8:15 PM","eventtype": eventType,"filterdate":curDate,"adjustedstartdate":AdjustedStartDate,"adjustedenddate":AdjustedEndDate,"roundoffdate":curDate,"eventcolor":eventColor}));
                         }
                     }else{
 						 if(CompareDate<=CurEndTime && curDay===EventDay){
-                            partial_result.push(objectMapper({"unique_id": unique_id,"Title": title,"StartDate": startDate,"EndDate": endDate,"EventRepeat": repeat,"EventTime": "8:15 PM","EventType": eventType,"FilterDate":curDate,"AdjustedStartDate":AdjustedStartDate,"AdjustedEndDate":AdjustedEndDate,"RoundoffDate":curDate,"EventColor":eventColor}));
+                            partial_result.push(objectMapper({"uniqid": unique_id,"title": title,"startdate": startDate,"enddate": endDate,"eventrepeat": repeat,"eventtime": "8:15 PM","eventtype": eventType,"filterdate":curDate,"adjustedstartdate":AdjustedStartDate,"adjustedenddate":AdjustedEndDate,"roundoffdate":curDate,"eventcolor":eventColor}));
                         }
                     }                
                 }

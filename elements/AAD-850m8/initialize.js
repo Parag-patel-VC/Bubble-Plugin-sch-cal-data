@@ -1,5 +1,5 @@
 function(instance, context) {
 
 
-window.myinstance=instance;
+//window.myinstance=instance;
 }
